@@ -7,4 +7,3 @@ for (let i = 0; i < text.length; i++) {
     textCircle.appendChild(span);
     span.style.transform = `rotate(${18 * i}deg)`
 }
-
