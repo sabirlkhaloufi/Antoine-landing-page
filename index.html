@@ -9,6 +9,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     /> -->
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/slider.css" />
     <link rel="stylesheet" href="./js/wow.js/css/animate.min.css" />
     <link rel="stylesheet" href="./js/wow.js/css/libs/animate.css" />
     <link
@@ -36,8 +41,10 @@
         srcset=""
       />
       <div class="top">
-        <div class="left ">
-          <a href="index.html" class="logo wow animate__animated animate__zoomIn"
+        <div class="left">
+          <a
+            href="index.html"
+            class="logo wow animate__animated animate__zoomIn"
             ><img
               src="./assets/images/logolight.png"
               width="120"
@@ -64,11 +71,10 @@
             </div>
           </div>
 
-        
-          <div class="learnmore wow animate__animated animate__backInDown"> 
+          <div class="learnmore wow animate__animated animate__backInDown">
             <i class="fa-solid fa-arrow-down"></i>
-            </div>
           </div>
+        </div>
 
         <div class="right animate__animated animate__backInRight">
           <img
@@ -228,28 +234,46 @@
     </div>
 
     <div class="temoignages">
-
-        <img class="frame" src="./assets/images/Temoignages/Frame.png" alt="" srcset="">
+      <img
+        class="frame"
+        src="./assets/images/Temoignages/Frame.png"
+        alt=""
+        srcset=""
+      />
       <div class="title">
         <h3>Témoignages</h3>
         <h3 class="textred">Témoignages</h3>
       </div>
 
-      <div class="slider">
-        
-        <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="" srcset="">
-        <img class="imgactive" src="./assets/images/Temoignages/Rectangle 107.png" alt="" srcset="">
-        <img src="https://plus.unsplash.com/premium_photo-1666299892720-f5ea52b8b7c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1928&q=80" alt="" srcset="">
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"></div>
+
+          <div class="swiper-slide">
+            <img src="./assets/images/Temoignages/Rectangle 107.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/Temoignages/Rectangle 107.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/Temoignages/Rectangle 107.png" alt="" />
+          </div>
+        </div>
+
+        <div class="swiper-scrollbar"></div>
       </div>
 
       <div class="bottom">
         <h4>Lorem ipsum</h4>
         <p>Lorem ipsum dolor sit amet</p>
-        <div class="btns">
+        <div class="swiper-pagination"></div>
+        <!-- <div class="btns">
             <button onclick="slideimg(1,this)" class="activebtn"></button>
             <button onclick="slideimg(2,this)"></button>
             <button onclick="slideimg(3,this)"></button>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="section5">
@@ -283,7 +307,7 @@
       </div>
     </div>
 
-    <footer class=" wow animate__animated animate__zoomIn">
+    <footer class="wow animate__animated animate__zoomIn">
       <div class="logo wow animate__animated animate__zoomIn">
         <img
           src="./assets/images/logolight.png"
@@ -310,22 +334,42 @@
 
     <script src="./js/wow.js/dist/wow.js"></script>
     <script src="./js/main.js"></script>
+    <script type="module">
+      import Swiper from "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs";
 
-    <script>wow = new WOW(
-        {
-          animateClass: 'animated',
-          offset:       100,
-          repeat: true   ,
-          callback:     function(box) {
-            console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-          }
-        }
-      );
+      const swiper = new Swiper(".swiper-container", {
+        effect: "coverflow",
+        grabCuarsor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        coverflowEffect: {
+          rotate: 20,
+          stretch: 0,
+          depth: 350,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+    <script>
+      wow = new WOW({
+        animateClass: "animated",
+        offset: 100,
+        repeat: true,
+        callback: function (box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">");
+        },
+      });
       wow.init();
-      document.getElementById('moar').onclick = function() {
-        var section = document.createElement('section');
-        section.className = 'section--purple wow fadeInDown';
+      document.getElementById("moar").onclick = function () {
+        var section = document.createElement("section");
+        section.className = "section--purple wow fadeInDown";
         this.parentNode.insertBefore(section, this);
-      };</script>
+      };
+    </script>
   </body>
 </html>
