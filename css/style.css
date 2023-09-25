@@ -431,10 +431,6 @@ transition: 0.3s ease-in-out;
   margin-top: -40px;
 }
 
-.section2 .content {
-  display: row ;
-}
-
 .section3 .cards .cardcontent .circle img{
   height: 50px;
   width: 50px;
@@ -579,6 +575,9 @@ footer .textred {
   }
 
 
+  .section2 .content {
+    flex-direction: row;
+  }
   /* section3 */
   .section3 p{
     padding: 10px 100px 10px 100px;
